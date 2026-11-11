@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - Gerson Noes Querevalu Fiestas</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --oscuro: #0f172a;
+            --primario: #1e40af;
+            --secundario: #3b82f6;
+            --claro: #eff6ff;
+            --texto: #334155;
+            --gris: #64748b;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #e9eef5;
+            color: var(--texto);
+            line-height: 1.6;
+            padding: 30px 15px;
+        }
+
+        /* BOTÓN PDF */
+
+        .acciones {
+            max-width: 1000px;
+            margin: 0 auto 18px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-pdf {
+            background: var(--primario);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0 4px 12px rgba(30,64,175,.2);
+        }
+
+        .btn-pdf:hover {
+            background: var(--secundario);
+            transform: translateY(-2px);
+        }
+
+        /* CONTENEDOR */
+
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 10px 35px rgba(15,23,42,.10);
+            overflow: hidden;
+        }
+
+        /* ENCABEZADO */
+
+        .encabezado {
+            background: linear-gradient(135deg, #0f172a, #1e40af);
+            color: white;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 155px 1fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .foto-perfil {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255,255,255,.65);
+            background: rgba(255,255,255,.15);
+        }
+
+        .foto-perfil img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-principal h1 {
+            font-size: 27px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .carrera {
+            font-size: 14px;
+            color: #dbeafe;
+            margin-bottom: 17px;
+        }
+
+        .datos-contacto {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            font-size: 12px;
+            color: #f1f5f9;
+        }
+
+        /* CUERPO */
+
+        .cuerpo {
+            display: grid;
+            grid-template-columns: 34% 66%;
+            padding: 30px;
+            gap: 0;
+        }
+
+        .columna-izquierda {
+            padding-right: 25px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .columna-derecha {
+            padding-left: 25px;
+        }
+
+        /* SECCIONES */
+
+        .seccion {
+            margin-bottom: 25px;
+            break-inside: auto;
+        }
+
+        .seccion h2 {
+            color: var(--primario);
+            font-size: 15px;
+            font-weight: 700;
+            padding-bottom: 8px;
+            margin-bottom: 13px;
+            border-bottom: 2px solid #dbeafe;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .perfil-texto {
+            font-size: 12px;
+            color: #475569;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* ITEMS */
+
+        .item {
+            margin-bottom: 15px;
+            break-inside: avoid;
+        }
+
+        .item h3 {
+            color: var(--oscuro);
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .lugar {
+            color: var(--primario);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .fecha {
+            color: var(--gris);
+            font-size: 10px;
+        }
+
+        /* HABILIDADES */
+
+        .lista-habilidades {
+            list-style: none;
+        }
+
+        .lista-habilidades li {
+            padding: 6px 0;
+            font-size: 11px;
+            border-bottom: 1px dashed #e2e8f0;
+            color: #475569;
+        }
+
+        .lista-habilidades li:last-child {
+            border-bottom: none;
+        }
+
+        /* PROYECTOS */
+
+        .proyecto {
+            background: #f1f6ff;
+            border-left: 3px solid var(--secundario);
+            padding: 13px;
+            border-radius: 5px;
+            margin-bottom: 12px;
+            break-inside: avoid;
+        }
+
+        .proyecto h4 {
+            font-size: 12px;
+            color: var(--oscuro);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .proyecto p {
+            font-size: 11px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 9px;
+            margin: 7px 3px 0 0;
+        }
+
+        /* LISTAS DE EXPERIENCIA Y SERVICIOS */
+
+        .lista-detalles {
+            padding-left: 17px;
+            color: #475569;
+            font-size: 11px;
+            line-height: 1.8;
+            margin-top: 5px;
+        }
+
+        .lista-detalles li {
+            padding-bottom: 3px;
+        }
+
+        .oferta-lista {
+            list-style: none;
+        }
+
+        .oferta-lista li {
+            font-size: 11px;
+            color: #475569;
+            padding: 5px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        /* EXPERIENCIA */
+
+        .experiencia {
+            border-left: 2px solid #bfdbfe;
+            padding-left: 14px;
+            margin-left: 4px;
+        }
+
+        /* PIE */
+
+        .pie {
+            border-top: 1px solid #e2e8f0;
+            padding: 18px 30px;
+            text-align: right;
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .encabezado {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 25px 18px;
+            }
+
+            .foto-perfil {
+                margin: auto;
+            }
+
+            .info-principal h1 {
+                font-size: 23px;
+            }
+
+            .datos-contacto {
+                justify-content: center;
+            }
+
+            .cuerpo {
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+
+            .columna-izquierda {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 0 0 15px;
+            }
+
+            .columna-derecha {
+                padding: 20px 0 0;
+            }
+        }
+
+        /* IMPRESIÓN Y PDF */
+
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .acciones {
+                display: none !important;
+            }
+
+            .contenedor {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+                overflow: visible;
+            }
+
+            .encabezado {
+                padding: 20px;
+                grid-template-columns: 115px 1fr;
+                gap: 20px;
+            }
+
+            .foto-perfil {
+                width: 105px;
+                height: 105px;
+            }
+
+            .info-principal h1 {
+                font-size: 21px;
+            }
+
+            .carrera {
+                font-size: 11px;
+                margin-bottom: 10px;
+            }
+
+            .datos-contacto {
+                font-size: 9px;
+                gap: 5px 12px;
+            }
+
+            .cuerpo {
+                padding: 18px;
+                grid-template-columns: 34% 66%;
+            }
+
+            .columna-izquierda {
+                padding-right: 15px;
+            }
+
+            .columna-derecha {
+                padding-left: 15px;
+            }
+
+            .seccion {
+                margin-bottom: 16px;
+            }
+
+            .seccion h2 {
+                font-size: 12px;
+                margin-bottom: 9px;
+            }
+
+            .perfil-texto {
+                font-size: 9px;
+                line-height: 1.6;
+            }
+
+            .item h3 {
+                font-size: 9px;
+            }
+
+            .lugar {
+                font-size: 9px;
+            }
+
+            .fecha {
+                font-size: 8px;
+            }
+
+            .lista-habilidades li {
+                font-size: 8px;
+                padding: 4px 0;
+            }
+
+            .proyecto {
+                padding: 9px;
+                margin-bottom: 8px;
+            }
+
+            .proyecto h4 {
+                font-size: 9px;
+            }
+
+            .proyecto p {
+                font-size: 8px;
+            }
+
+            .etiqueta {
+                font-size: 7px;
+                padding: 2px 6px;
+            }
+
+            .lista-detalles {
+                font-size: 8px;
+                line-height: 1.6;
+            }
+
+            .oferta-lista li {
+                font-size: 8px;
+                padding: 3px 0;
+            }
+
+            .pie {
+                font-size: 9px;
+                padding: 12px 18px;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BOTÓN PARA GUARDAR PDF -->
+
+    <div class="acciones">
+        <button class="btn-pdf" onclick="window.print()">
+            ⬇ Guardar como PDF
+        </button>
+    </div>
+
+    <div class="contenedor">
+
+        <!-- ENCABEZADO -->
+
+        <header class="encabezado">
+
+            <div class="foto-perfil">
+                <img src="foto.jpg" alt="Fotografía de Gerson Noes">
+            </div>
+
+            <div class="info-principal">
+
+                <h1>Gerson Noes Querevalu Fiestas</h1>
+
+                <p class="carrera">
+                    Técnico Titulado en Arquitectura de Plataformas y Servicios de TI
+                </p>
+
+                <div class="datos-contacto">
+                    <span>📍 Sechura — Piura, Perú</span>
+                    <span>📧 gersonnoeq@gmail.com</span>
+                    <span>📱 926193405</span>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- CUERPO PRINCIPAL -->
+
+        <main class="cuerpo">
+
+            <!-- COLUMNA IZQUIERDA -->
+
+            <aside class="columna-izquierda">
+
+                <!-- PERFIL -->
+
+                <section class="seccion">
+
+                    <h2>👤 Perfil Profesional</h2>
+
+                    <p class="perfil-texto">
+                        Técnico Titulado en Arquitectura de Plataformas y Servicios
+                        de TI, formado en el Instituto Ricardo Ramos Plata de Sechura.
+                        Cuento con conocimientos y experiencia práctica en desarrollo
+                        de software, administración de redes, servidores Windows y
+                        Linux, soporte técnico integral y despliegue de soluciones
+                        en la nube.
+
+                        <br><br>
+
+                        Manejo herramientas de programación, conectividad Cisco,
+                        configuración de cortafuegos, bases de datos, mantenimiento
+                        de equipos informáticos e instalación de fibra óptica.
+                        Me caracterizo por ser responsable, proactivo, comprometido
+                        con el trabajo y orientado a brindar soluciones tecnológicas.
+                    </p>
+
+                </section>
+
+                <!-- FORMACIÓN ACADÉMICA -->
+
+                <section class="seccion">
+
+                    <h2>🎓 Formación Académica</h2>
+
+                    <div class="item">
+
+                        <h3>Arquitectura de Plataformas y Servicios de TI</h3>
+
+                        <p class="lugar">
+                            Instituto de Educación Superior Tecnológico
+                            Ricardo Ramos Plata — Sechura
+                        </p>
+
+                        <p class="fecha">
+                            2022 — 2025 · Titulado
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- ESTUDIOS ESCOLARES -->
+
+                <section class="seccion">
+
+                    <h2>📚 Estudios Escolares</h2>
+
+                    <div class="item">
+
+                        <h3>Educación Secundaria</h3>
+
+                        <p class="lugar">
+                            I.E. Divino Maestro
+                        </p>
+
+                    </div>
+
+                    <div class="item">
+
+                        <h3>Educación Primaria</h3>
+
+                        <p class="lugar">
+                            I.E.P. Jesús el Buen Sembrador
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- HABILIDADES -->
+
+                <section class="seccion">
+
+                    <h2>🛠️ Habilidades Técnicas</h2>
+
+                    <ul class="lista-habilidades">
+
+                        <li>📱 Desarrollo de aplicaciones · Flutter · Dart · APK Android</li>
+
+                        <li>🌐 Desarrollo web · PHP · MySQL · XAMPP · phpMyAdmin</li>
+
+                        <li>🖥️ Windows Server · Administración · Usuarios · Carpetas compartidas</li>
+
+                        <li>🔥 Cortafuegos · Reglas de entrada y salida · Seguridad de red</li>
+
+                        <li>🐧 Linux Ubuntu · Servidores · Despliegue en la nube</li>
+
+                        <li>🖧 Redes Cisco · VLAN · DHCP · Enlaces Trunk · IP fija</li>
+
+                        <li>🔒 VPN · Acceso remoto · AnyDesk · Escritorio remoto</li>
+
+                        <li>💻 Windows · Instalación · Formateo · Respaldos</li>
+
+                        <li>📦 Instalación y configuración de Microsoft Office</li>
+
+                        <li>💾 Migración de datos · Instalación de SSD · Copias de seguridad</li>
+
+                        <li>📊 Excel básico · Word · PowerPoint · Google Workspace</li>
+
+                        <li>⚡ Mantenimiento preventivo y correctivo de equipos</li>
+
+                        <li>⚡ Pozos a tierra · Protección eléctrica de equipos</li>
+
+                        <li>🎥 Edición de video · Presentaciones · Diseño visual</li>
+
+                        <li></li>
+
+                    </ul>
+
+                </section>
+
+            </aside>
+
+            <!-- COLUMNA DERECHA -->
+
+            <section class="columna-derecha">
+
+                <!-- EXPERIENCIA PREPROFESIONAL -->
+
+                <section class="seccion">
+
+                    <h2>💼 Experiencia Preprofesional</h2>
+
+                    <div class="experiencia">
+
+                        <div class="item">
+
+                            <h3>Practicante de Telecomunicaciones</h3>
+
+                            <p class="lugar">Cable Noel</p>
+
+                            <ul class="lista-detalles">
+
+                                <li>
+                                    Apoyo en la instalación de servicios de internet
+                                    mediante tecnología de fibra óptica.
+                                </li>
+
+                                <li>
+                                    Participación en trabajos de instalación y
+                                    conexión de servicios de internet.
+                                </li>
+
+                                <li>
+                                    Apoyo en el corte de servicio por morosidad
+                                    y trabajos relacionados con el cableado
+                                    instalado en postes.
+                                </li>
+
+                                <li>
+                                    Apoyo en labores técnicas de infraestructura
+                                    y mantenimiento de conexiones de telecomunicaciones.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="item">
+
+                            <h3>Practicante de Soporte Informático y Apoyo Administrativo</h3>
+
+                            <p class="lugar">Fábrica EMOR</p>
+
+                            <ul class="lista-detalles">
+
+                                <li>
+                                    Desarrollo de una aplicación informática para
+                                    el registro y control de entrada y salida de productos.
+                                </li>
+
+                                <li>
+                                    Apoyo en las actividades y labores del área
+                                    de Recursos Humanos.
+                                </li>
+
+                                <li>
+                                    Instalación y configuración de Microsoft Office
+                                    en los equipos de la empresa.
+                                </li>
+
+                                <li>
+                                    Mantenimiento preventivo y correctivo de computadoras.
+                                </li>
+
+                                <li>
+                                    Asistencia y soporte técnico al personal
+                                    en el uso de equipos informáticos.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- PROYECTOS -->
+
+                <section class="seccion">
+
+                    <h2>🚀 Proyectos Realizados</h2>
+
+                    <div class="proyecto">
+
+                        <h4>📱 Aplicación móvil conectada a base de datos en la nube</h4>
+
+                        <p>
+                            Desarrollo de una aplicación móvil en Flutter conectada
+                            a una base de datos MySQL mediante PHP. Desplegada en
+                            un servidor en la nube para permitir el acceso desde
+                            diferentes ubicaciones sin depender de equipos locales.
+                        </p>
+
+                        <span class="etiqueta">Flutter</span>
+                        <span class="etiqueta">Dart</span>
+                        <span class="etiqueta">PHP</span>
+                        <span class="etiqueta">MySQL</span>
+                        <span class="etiqueta">Nube</span>
+
+                    </div>
+
+                    <div class="proyecto">
+
+                        <h4>🖧 Red Empresarial con VLAN y Acceso Remoto</h4>
+
+                        <p>
+                            Diseño y configuración de una red con VLAN,
+                            impresoras compartidas, cortafuegos, VPN y
+                            Escritorio Remoto. Implementación de medidas
+                            para facilitar el trabajo seguro y proteger
+                            la información.
+                        </p>
+
+                        <span class="etiqueta">Cisco</span>
+                        <span class="etiqueta">VLAN</span>
+                        <span class="etiqueta">VPN</span>
+                        <span class="etiqueta">Cortafuegos</span>
+
+                    </div>
+
+                    <div class="proyecto">
+
+                        <h4>🖥️ Administración con Windows Server</h4>
+
+                        <p>
+                            Configuración de servidor para centralizar
+                            información, gestionar usuarios, carpetas
+                            compartidas y respaldos automáticos.
+                            Administración de recursos dentro de una red local.
+                        </p>
+
+                        <span class="etiqueta">Windows Server</span>
+                        <span class="etiqueta">Usuarios</span>
+                        <span class="etiqueta">Respaldo</span>
+                        <span class="etiqueta">Seguridad</span>
+
+                    </div>
+
+                    <div class="proyecto">
+
+                        <h4>🐧 Laboratorio Linux y Despliegue</h4>
+
+                        <p>
+                            Implementación de un entorno de práctica para
+                            administración de servidores, manejo de comandos,
+                            configuración de servicios y despliegue de
+                            aplicaciones multiplataforma.
+                        </p>
+
+                        <span class="etiqueta">Ubuntu</span>
+                        <span class="etiqueta">Linux</span>
+                        <span class="etiqueta">Servidores</span>
+
+                    </div>
+
+                </section>
+
+                <!-- SERVICIOS -->
+
+                <section class="seccion">
+
+                    <h2>💡 Lo que puedo ofrecer</h2>
+
+                    <ul class="oferta-lista">
+
+                        <li>✓ Instalación, configuración y mantenimiento de Windows Server.</li>
+
+                        <li>✓ Configuración de cortafuegos y reglas de seguridad.</li>
+
+                        <li>✓ Instalación de Office, sistemas operativos y programas.</li>
+
+                        <li>✓ Migración de discos SSD y respaldo de información.</li>
+
+                        <li>✓ Desarrollo y mantenimiento de sistemas y páginas web.</li>
+
+                        <li>✓ Administración de redes, impresoras y equipos de conectividad.</li>
+
+                        <li></li>
+
+                        <li>✓ Mantenimiento preventivo y correctivo de computadoras.</li>
+
+                        <li>✓ Soporte técnico presencial y remoto en Sechura y Piura.</li>
+
+                        <li>✓ Puntualidad, responsabilidad y disposición para aprender y crecer.</li>
+
+                    </ul>
+
+                </section>
+
+            </section>
+
+        </main>
+
+        <!-- PIE DEL CURRÍCULUM -->
+
+        <footer class="pie">
+
+            <p>
+                Gracias por su tiempo y consideración.
+                Quedo a su entera disposición.
+            </p>
+
+            <p>
+                <strong>Sechura, Piura — 2026</strong>
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
